@@ -42,7 +42,7 @@ cleanup()
    echo "------------------------------------------------------------------------------" 
    echo "Starting Cleanup  "
    echo "Stopping Container $cname"
-   docker stop $cname
+   docker kill $cname
    echo "Removing Container $cname"
    docker rm $cname
    echo "Cleanup Completed "
