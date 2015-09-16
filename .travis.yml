@@ -6,7 +6,7 @@ services:
   - docker
 
 before_install:
-- docker pull jamiecoleman92/temp
+- docker pull jamiecoleman92/temp/websphere-liberty
 - docker run -d -p 127.0.0.1:80:4567 jamiecoleman92/temp /bin/sh -c "cd /root/websphere-liberty; bundle exec foreman start;"
 - docker ps -a
 - docker run carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec rake test"
