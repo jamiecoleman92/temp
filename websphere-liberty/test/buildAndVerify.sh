@@ -35,12 +35,12 @@ echo "           Starting docker build for $image                               
 echo "******************************************************************************"
 
 docker build --no-cache=true -t $image $dloc  > build_$tag.log
-
 cleanup()
 {
 
    echo "------------------------------------------------------------------------------" 
    echo "Starting Cleanup  "
+   exit
    echo "Stopping Container $cname"
    docker kill $cname
    echo "Removing Container $cname"
