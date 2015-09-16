@@ -1,11 +1,15 @@
-language: java
-rvm:
- - "1.8.7"
- - "1.9.2"
- - "1.9.3"
- sudo: required
+sudo: required
+
+language: ruby
 
 services:
   - docker
-# uncomment this line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+
+before_install:
+- docker pull carlad/sinatra
+- docker run -d -p 127.0.0.1:80:4567 carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec foreman start;"
+- docker ps -a
+- docker run carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec rake test"
+
+script:
+- bundle exec rake test
