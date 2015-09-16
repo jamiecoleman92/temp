@@ -7,9 +7,10 @@ services:
 
 before_install:
 - docker pull websphere-liberty
-- docker run -d -p 127.0.0.1:80:4567 websphere-liberty /bin/sh -c "cd /root/websphere-liberty; bundle exec foreman start;"
-- docker ps -a
-- docker run websphere-liberty /bin/sh -c LICENSE=accept "cd /root/websphere-liberty/test; bundle exec buildAll test"
+- docker build -t websphere-liberty
+#- docker run -d -p 127.0.0.1:80:4567 websphere-liberty /bin/sh -c "cd /root/websphere-liberty; bundle exec foreman start;"
+#- docker ps -a
+#- docker run websphere-liberty /bin/sh -c LICENSE=accept "cd /root/websphere-liberty/test; bundle exec buildAll test"
 
-script:
-- bundle exec buildAll test
+#script:
+#- bundle exec buildAll test
