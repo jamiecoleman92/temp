@@ -103,7 +103,7 @@ test2()
         cleanup
    fi
 
-   cid=`docker run --name $cname -e LICENSE=accept -d -t $image `
+   cid=`docker run --name $cname -d -t -e LICENSE=accept $image `
    scid=${cid:0:12}
    sleep 10
    if [ $scid != "" ]
