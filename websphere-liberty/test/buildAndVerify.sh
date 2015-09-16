@@ -40,7 +40,6 @@ cleanup()
 
    echo "------------------------------------------------------------------------------" 
    echo "Starting Cleanup  "
-   exit
    echo "Stopping Container $cname"
    docker kill $cname
    echo "Removing Container $cname"
@@ -76,6 +75,7 @@ test1()
                 else
                         echo "Container test exited , expecting license acceptance  "
                         echo "Removing container $cname"
+                        docker stop $cname
                         docker rm $cname
                 fi
         else
