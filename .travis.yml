@@ -10,7 +10,7 @@ before_install:
 #- docker build -t jamiecoleman92/websphere-liberty .
 #- docker run -d -p 127.0.0.1:80:4567 websphere-liberty /bin/sh -c "cd /root/websphere-liberty; bundle exec foreman start;"
 #- docker ps -a
-- docker run jamiecoleman92/websphere-liberty/test /bin/sh -c LICENSE=accept "cd /root/websphere-liberty; bundle exec buildAll test"
+#- docker run jamiecoleman92/websphere-liberty/test /bin/sh -c LICENSE=accept "cd /root/websphere-liberty; bundle exec buildAll test"
 
 script:
 - bundle exec buildAll test
