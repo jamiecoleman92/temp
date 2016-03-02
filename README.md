@@ -147,7 +147,6 @@ This time you have specified the `-P` flag to indicate that Docker should automa
     ```bash
     $ docker stats $C $D
     ```
-
 Note that, having not expressed any constraints, each container has the full memory allocated to virtual machine available to it.
 8. Enter `Ctrl-C` to terminate the stats stream.
 9. Clean up the containers with the following commands:
